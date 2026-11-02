@@ -22,7 +22,8 @@ Everything Islo shows comes from your own PC and stays there:
 - **What you copy** (the clipboard) is shown on the island and kept in memory
   for the Clipboard page. It's never saved to disk (except a copied
   screenshot you drag, see below) or sent anywhere, and it's gone when Islo
-  closes.
+  closes. What password managers copy (they mark it so) is skipped: it never
+  shows and isn't kept.
 - **Notes, the shelf and your settings** are saved in `%LOCALAPPDATA%\Islo`
   on your PC, with your approximate place for the weather (so it isn't looked
   up again each time).
@@ -38,6 +39,14 @@ Everything Islo shows comes from your own PC and stays there:
   clipboard (no file) gets a file in `%LOCALAPPDATA%\Islo\Screenshots` when
   you drag it or put it on the shelf; the newest 20 are kept. Islo doesn't
   open your other files, and never uploads or sends any file.
+- **The keyboard**: Islo is never told which keys you press. For its Caps
+  Lock and keyboard-language cards it asks Windows a few times a second
+  whether Caps Lock or Num Lock is on and which language the window in front
+  types in. It can't see or record what you type.
+- **The window in front, during a focus session only**: to warn you about
+  distracting apps and sites you chose, Islo looks at the name of the app in
+  front and its window title (a browser's shows the page's title). It's
+  compared with your list there and then, never saved or sent.
 - **A log** (`islo.log`) in the same folder helps fix problems. It never
   contains notification text, what you copied, or your notes.
 - **If Islo crashes**, it saves `islo-crash.dmp` in the same folder, to find
@@ -95,11 +104,13 @@ Islo جزيرة ديناميكية لويندوز. بيشتغل على جهاز�
 ## اللي بيفضل على جهازك
 
 - **الإشعارات** بتتقري من قايمة إشعارات ويندوز عشان تظهر على الجزيرة. مش بتتحفظ ومش بتتبعت لأي مكان. في نسخة Microsoft Store، الويندوز بيستأذنك الأول، وIslo مبيقراهاش غير وانت سامح بده، وتقدر تقفله من إعدادات الويندوز (الخصوصية، الإشعارات).
-- **اللي بتنسخه** بيظهر على الجزيرة ويفضل في الذاكرة لصفحة الحافظة. مش بيتحفظ على الجهاز (إلا لقطة شاشة منسوخة بتسحبها، تحت) ومش بيتبعت، وبيروح لما Islo يتقفل.
+- **اللي بتنسخه** بيظهر على الجزيرة ويفضل في الذاكرة لصفحة الحافظة. مش بيتحفظ على الجهاز (إلا لقطة شاشة منسوخة بتسحبها، تحت) ومش بيتبعت، وبيروح لما Islo يتقفل. واللي برامج الباسوردات بتنسخه (بتعلّم عليه) Islo بيتجاهله: مش بيظهر ومش بيتحفظ.
 - **الملاحظات والرف والإعدادات** متخزنين في `%LOCALAPPDATA%\Islo` على جهازك، ومعاهم مكانك التقريبي للطقس (عشان ميتدورش عليه كل مرة).
 - **الموسيقى**: اللي شغال بيتعرف من أزرار الميديا في ويندوز. كلمات الأغاني اللي بتتلاقي بتتحفظ في `%LOCALAPPDATA%\Islo\lyrics` (مع اسم الأغنية والفنان)، عشان الأغنية اللي سمعتها قبل كده تظهر كلماتها على طول. أقصى حاجة 10 ميجا، والأغاني اللي بقالك أكتر وقت مسمعتهاش بتتمسح الأول.
 - **الكاميرا والميكروفون والبطارية والأجهزة والتحميلات**: Islo بيلاحظ إنها اتغيرت بس (زي «الميكروفون شغال»، أو اسم الملف اللي بيتحمّل ووصل لفين). مش بيسجّل صوت أو صورة.
 - **لقطات الشاشة**: لما تاخد لقطة، Islo بيفتح الصورة الجديدة دي بس عشان يعرضها صغيرة على الجزيرة وتقدر تسحبها. ولو اللقطة متنسخة بس من غير ملف، Islo بيعملها ملف في `%LOCALAPPDATA%\Islo\Screenshots` لما تسحبها أو تحطها على الرف، وبيحتفظ بآخر 20 بس. مش بيفتح ملفاتك التانية، ومش بيرفع أو يبعت أي ملف.
+- **الكيبورد**: Islo مبيتبلّغش أبداً بالزراير اللي بتدوسها. عشان كروت Caps Lock ولغة الكيبورد، بيسأل الويندوز كام مرة في الثانية: Caps Lock أو Num Lock شغالين؟ والنافذة اللي قدامك بتكتب بأنهي لغة؟ مش بيقدر يشوف أو يسجّل اللي بتكتبه.
+- **النافذة اللي قدامك، وقت جلسة التركيز بس**: عشان يحذّرك من البرامج والمواقع المشتتة اللي اخترتها، Islo بيشوف اسم البرنامج اللي قدامك وعنوان نافذته (المتصفح بيكتب فيه عنوان الصفحة). بيتقارن بقايمتك في نفس اللحظة، ومش بيتحفظ ولا بيتبعت.
 - **سجل** (`islo.log`) في نفس الفولدر بيساعد في حل المشاكل. مفيهوش أبداً نص الإشعارات ولا اللي نسخته ولا ملاحظاتك.
 - **لو Islo وقع**، بيحفظ `islo-crash.dmp` في نفس الفولدر عشان نعرف السبب. ممكن يكون فيه حتت من اللي كان في ذاكرة Islo ساعتها. بيفضل على جهازك ومش بيتبعت لأي مكان، ومبيوصلش للمطوّر غير لو انت بعته بنفسك.
 
