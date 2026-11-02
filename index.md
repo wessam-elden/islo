@@ -4,7 +4,7 @@ title: Islo privacy policy
 
 # Islo privacy policy
 
-*Last updated: 14 October 2026*
+*Last updated: 2 November 2026*
 
 Islo is a Dynamic Island for Windows. It runs on your PC, has no account, and
 has no servers of its own. It collects nothing about you and sends nothing to
@@ -15,13 +15,19 @@ its developer: no analytics, no tracking, no ads.
 Everything Islo shows comes from your own PC and stays there:
 
 - **Notifications** from your apps are read from Windows' notification list
-  to show them on the island. They are never saved or sent anywhere.
+  to show them on the island. They are never saved or sent anywhere. In the
+  Microsoft Store version, Windows asks you first, and Islo reads them only
+  while you allow it; you can turn it off in Windows' Settings (Privacy,
+  Notifications).
 - **What you copy** (the clipboard) is shown on the island and kept in memory
   for the Clipboard page. It's never saved to disk or sent anywhere, and it's
   gone when Islo closes.
 - **Notes, the shelf and your settings** are saved in `%LOCALAPPDATA%\Islo`
   on your PC.
-- **Music**: what's playing comes from Windows' media controls.
+- **Music**: what's playing comes from Windows' media controls. Lyrics found
+  for a song are saved in `%LOCALAPPDATA%\Islo\lyrics` (with the song's title
+  and artist), so a song heard before shows them at once; at most 10 MB, the
+  songs not heard for longest go first.
 - **Camera, microphone, battery, devices, downloads and screenshots**: Islo
   only notices that they changed (for example, "the microphone is in use"). It
   never records sound or video, and never opens your files.
@@ -30,7 +36,7 @@ Everything Islo shows comes from your own PC and stays there:
 
 ## What goes over the internet
 
-Islo talks to four free services, and only for the features below. Each is
+Islo talks to these services, and only for the features below. Each is
 sent only what it needs:
 
 | Service | What for | What it receives |
@@ -39,6 +45,15 @@ sent only what it needs:
 | [Open-Meteo](https://open-meteo.com) | Weather, and finding a city you type | Approximate coordinates of your city, or the city name you typed |
 | [LRCLIB](https://lrclib.net) | Synced lyrics for the song playing | The song's title, artist and length. You can turn lyrics off in Settings → Music. |
 | Microsoft (`msftconnecttest.com`) | Opened only if you click "Sign in" on a card that says the network needs a sign-in page (e.g. hotel Wi-Fi) | What any browser sends when opening a page |
+| Google or Microsoft, only if you add your calendar | Your calendar's events, for the island | Only the request for your calendar's own address |
+
+**Your calendar** (only if you add it in Settings → Calendar): Islo reads it from the
+calendar's secret iCal address, which you copy from Google Calendar or Outlook. The
+address is saved only in `settings.ini` on your PC and never written to the log. Every
+15 minutes Islo downloads it directly from Google or Microsoft over https, from that
+address and nowhere else. Today's and tomorrow's events are kept in
+`calendar-events.tsv` in the same folder for the island to show; nothing about your
+calendar is sent anywhere.
 
 Prayer times are worked out on your PC. Islo doesn't send your notifications,
 your clipboard, your notes, or anything else.
@@ -61,17 +76,17 @@ Questions: wessamelden7@gmail.com
 
 # سياسة الخصوصية لـ Islo
 
-*آخر تحديث: 14 أكتوبر 2026*
+*آخر تحديث: 2 نوفمبر 2026*
 
 Islo جزيرة ديناميكية لويندوز. بيشتغل على جهازك، ومن غير حساب، ومالوش سيرفرات.
 مش بيجمع أي بيانات عنك ومش بيبعت حاجة لمطوّره: لا إحصائيات ولا تتبع ولا إعلانات.
 
 ## اللي بيفضل على جهازك
 
-- **الإشعارات** بتتقري من قايمة إشعارات ويندوز عشان تظهر على الجزيرة. مش بتتحفظ ومش بتتبعت لأي مكان.
+- **الإشعارات** بتتقري من قايمة إشعارات ويندوز عشان تظهر على الجزيرة. مش بتتحفظ ومش بتتبعت لأي مكان. في نسخة Microsoft Store، الويندوز بيستأذنك الأول، وIslo مبيقراهاش غير وانت سامح بده، وتقدر تقفله من إعدادات الويندوز (الخصوصية، الإشعارات).
 - **اللي بتنسخه** بيظهر على الجزيرة ويفضل في الذاكرة لصفحة الحافظة. مش بيتحفظ على الجهاز ومش بيتبعت، وبيروح لما Islo يتقفل.
 - **الملاحظات والرف والإعدادات** متخزنين في `%LOCALAPPDATA%\Islo` على جهازك.
-- **الموسيقى**: اللي شغال بيتعرف من أزرار الميديا في ويندوز.
+- **الموسيقى**: اللي شغال بيتعرف من أزرار الميديا في ويندوز. كلمات الأغاني اللي بتتلاقي بتتحفظ في `%LOCALAPPDATA%\Islo\lyrics` (مع اسم الأغنية والفنان)، عشان الأغنية اللي سمعتها قبل كده تظهر كلماتها على طول. أقصى حاجة 10 ميجا، والأغاني اللي بقالك أكتر وقت مسمعتهاش بتتمسح الأول.
 - **الكاميرا والميكروفون والبطارية والأجهزة والتحميلات ولقطات الشاشة**: Islo بيلاحظ إنها اتغيرت بس (زي «الميكروفون شغال»). مش بيسجّل صوت أو صورة، ومش بيفتح ملفاتك.
 - **سجل** (`islo.log`) في نفس الفولدر بيساعد في حل المشاكل. مفيهوش أبداً نص الإشعارات ولا اللي نسخته ولا ملاحظاتك.
 
@@ -83,6 +98,9 @@ Islo جزيرة ديناميكية لويندوز. بيشتغل على جهاز�
 | Open-Meteo | الطقس، ولقي المدينة اللي كتبتها | إحداثيات تقريبية لمدينتك، أو اسم المدينة اللي كتبته |
 | LRCLIB | كلمات الأغنية اللي شغالة | اسم الأغنية والفنان والمدة. تقدر تقفل الكلمات من الإعدادات ← الموسيقى. |
 | مايكروسوفت (`msftconnecttest.com`) | بيتفتح بس لو دست «تسجيل الدخول» على كارت بيقول إن الشبكة محتاجة صفحة دخول (زي واي فاي الفنادق) | اللي أي متصفح بيبعته وهو بيفتح صفحة |
+| Google أو مايكروسوفت، لو ضفت التقويم بتاعك بس | مواعيد التقويم بتاعك عشان تظهر على الجزيرة | طلب عنوان التقويم بتاعك وبس |
+
+**التقويم بتاعك** (لو ضفته من الإعدادات ← التقويم بس): Islo بيقراه من العنوان السري للتقويم بصيغة iCal اللي بتنسخه من Google Calendar أو Outlook. العنوان بيتحفظ في `settings.ini` على جهازك بس، ومش بيتكتب في السجل أبداً. كل 15 دقيقة Islo بيجيب التقويم من Google أو مايكروسوفت على طول بـ https، من العنوان ده ومن مكان غيره لأ. مواعيد النهارده وبكره بتتحفظ في `calendar-events.tsv` في نفس الفولدر عشان الجزيرة تعرضها، ولا حاجة من التقويم بتتبعت لأي مكان.
 
 مواقيت الصلاة بتتحسب على جهازك. Islo مش بيبعت إشعاراتك ولا الحافظة ولا ملاحظاتك ولا أي حاجة تانية.
 
