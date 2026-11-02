@@ -20,19 +20,30 @@ Everything Islo shows comes from your own PC and stays there:
   while you allow it; you can turn it off in Windows' Settings (Privacy,
   Notifications).
 - **What you copy** (the clipboard) is shown on the island and kept in memory
-  for the Clipboard page. It's never saved to disk or sent anywhere, and it's
-  gone when Islo closes.
+  for the Clipboard page. It's never saved to disk (except a copied
+  screenshot you drag, see below) or sent anywhere, and it's gone when Islo
+  closes.
 - **Notes, the shelf and your settings** are saved in `%LOCALAPPDATA%\Islo`
-  on your PC.
+  on your PC, with your approximate place for the weather (so it isn't looked
+  up again each time).
 - **Music**: what's playing comes from Windows' media controls. Lyrics found
   for a song are saved in `%LOCALAPPDATA%\Islo\lyrics` (with the song's title
   and artist), so a song heard before shows them at once; at most 10 MB, the
   songs not heard for longest go first.
-- **Camera, microphone, battery, devices, downloads and screenshots**: Islo
-  only notices that they changed (for example, "the microphone is in use"). It
-  never records sound or video, and never opens your files.
+- **Camera, microphone, battery, devices and downloads**: Islo only notices
+  that they changed (for example, "the microphone is in use", or a download's
+  file name and progress). It never records sound or video.
+- **Screenshots**: when you take one, Islo opens that new picture to show it
+  small on the island, ready to drag. A screenshot that is only on the
+  clipboard (no file) gets a file in `%LOCALAPPDATA%\Islo\Screenshots` when
+  you drag it or put it on the shelf; the newest 20 are kept. Islo doesn't
+  open your other files, and never uploads or sends any file.
 - **A log** (`islo.log`) in the same folder helps fix problems. It never
   contains notification text, what you copied, or your notes.
+- **If Islo crashes**, it saves `islo-crash.dmp` in the same folder, to find
+  out why. It can hold bits of what Islo had in memory at that moment. It
+  stays on your PC and is never sent anywhere; it reaches the developer only
+  if you send it yourself.
 
 ## What goes over the internet
 
@@ -84,11 +95,13 @@ Islo جزيرة ديناميكية لويندوز. بيشتغل على جهاز�
 ## اللي بيفضل على جهازك
 
 - **الإشعارات** بتتقري من قايمة إشعارات ويندوز عشان تظهر على الجزيرة. مش بتتحفظ ومش بتتبعت لأي مكان. في نسخة Microsoft Store، الويندوز بيستأذنك الأول، وIslo مبيقراهاش غير وانت سامح بده، وتقدر تقفله من إعدادات الويندوز (الخصوصية، الإشعارات).
-- **اللي بتنسخه** بيظهر على الجزيرة ويفضل في الذاكرة لصفحة الحافظة. مش بيتحفظ على الجهاز ومش بيتبعت، وبيروح لما Islo يتقفل.
-- **الملاحظات والرف والإعدادات** متخزنين في `%LOCALAPPDATA%\Islo` على جهازك.
+- **اللي بتنسخه** بيظهر على الجزيرة ويفضل في الذاكرة لصفحة الحافظة. مش بيتحفظ على الجهاز (إلا لقطة شاشة منسوخة بتسحبها، تحت) ومش بيتبعت، وبيروح لما Islo يتقفل.
+- **الملاحظات والرف والإعدادات** متخزنين في `%LOCALAPPDATA%\Islo` على جهازك، ومعاهم مكانك التقريبي للطقس (عشان ميتدورش عليه كل مرة).
 - **الموسيقى**: اللي شغال بيتعرف من أزرار الميديا في ويندوز. كلمات الأغاني اللي بتتلاقي بتتحفظ في `%LOCALAPPDATA%\Islo\lyrics` (مع اسم الأغنية والفنان)، عشان الأغنية اللي سمعتها قبل كده تظهر كلماتها على طول. أقصى حاجة 10 ميجا، والأغاني اللي بقالك أكتر وقت مسمعتهاش بتتمسح الأول.
-- **الكاميرا والميكروفون والبطارية والأجهزة والتحميلات ولقطات الشاشة**: Islo بيلاحظ إنها اتغيرت بس (زي «الميكروفون شغال»). مش بيسجّل صوت أو صورة، ومش بيفتح ملفاتك.
+- **الكاميرا والميكروفون والبطارية والأجهزة والتحميلات**: Islo بيلاحظ إنها اتغيرت بس (زي «الميكروفون شغال»، أو اسم الملف اللي بيتحمّل ووصل لفين). مش بيسجّل صوت أو صورة.
+- **لقطات الشاشة**: لما تاخد لقطة، Islo بيفتح الصورة الجديدة دي بس عشان يعرضها صغيرة على الجزيرة وتقدر تسحبها. ولو اللقطة متنسخة بس من غير ملف، Islo بيعملها ملف في `%LOCALAPPDATA%\Islo\Screenshots` لما تسحبها أو تحطها على الرف، وبيحتفظ بآخر 20 بس. مش بيفتح ملفاتك التانية، ومش بيرفع أو يبعت أي ملف.
 - **سجل** (`islo.log`) في نفس الفولدر بيساعد في حل المشاكل. مفيهوش أبداً نص الإشعارات ولا اللي نسخته ولا ملاحظاتك.
+- **لو Islo وقع**، بيحفظ `islo-crash.dmp` في نفس الفولدر عشان نعرف السبب. ممكن يكون فيه حتت من اللي كان في ذاكرة Islo ساعتها. بيفضل على جهازك ومش بيتبعت لأي مكان، ومبيوصلش للمطوّر غير لو انت بعته بنفسك.
 
 ## اللي بيروح على الإنترنت
 
